@@ -1,0 +1,11 @@
+---
+layout: page
+title: Ayuda
+permalink: /ayuda/
+---
+{% assign items = site.ayuda | sort: 'order' %}
+{% for help in items %}
+<div class="ayuda">
+	<h2><a href="{{ site.baseurl }}{{ help.url }}">{{ help.title }}</a></h2>
+</div>
+{% endfor %}

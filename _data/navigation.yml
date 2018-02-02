@@ -1,0 +1,27 @@
+# documentation links
+#ayuda:
+#- title: "Quick-Start Guide"
+#  url: /ayuda/prueba1/
+#    subitems:
+#      - title: "Structure"
+#        url: /ayuda/prueba2/
+ayuda:
+- text: Introduccion
+  title: Instalacion PM Code
+  url: /PMCode/ayuda/introduccion/
+  subitems:
+   - text: Prueba1
+     url: /PMCode/ayuda/introduccion/prueba1/
+     subitems:
+      - text: Prueba5
+        url: /PMCode/ayuda/introduccion/prueba1/prueba5/
+        subitems:
+         - text: Prueba2
+           url: /PMCode/ayuda/introduccion/prueba1/prueba5/prueba2/
+      - text: Prueba3
+        url: /PMCode/ayuda/introduccion/prueba1/prueba5/prueba3/
+      - text: Prueba4
+        url: /PMCode/ayuda/introduccion/prueba1/prueba5/prueba4/
+- text: Configuracion
+  title: Configuracion PM Code
+  url: /PMCode/ayuda/configuracion/

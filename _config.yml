@@ -29,7 +29,16 @@ markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
-
+collections:
+  ayuda:
+    output: true
+    permalink: /:collection/:name/
+defaults:
+ - scope:
+     path: ""
+     type: ayuda
+   values:
+     layout: ayuda
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
