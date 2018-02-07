@@ -4,6 +4,25 @@
 
 @import "minima";
 
+$backgroundcolor-header-footer: #34495E;
 .wrapper { max-width:1200px; }
-aside li {list-style-type: none; }
+aside li { list-style-type: none; }
+.separator-breadcrumb { margin: 0 5px; float: left; }
+.breadcrumb > li { float: left; }
+.breadcrumb { list-style-type: none; margin: 0; float: right; }
+@media (max-width: 600px) { .breadcrumb {display:none;} .site-nav .menu-icon > svg path { fill: white; } .site-nav { background-color: $backgroundcolor-header-footer; } }
+.site-header { border-top: 5px solid $backgroundcolor-header-footer; background-color:$backgroundcolor-header-footer; }
+.site-footer.h-card p, .site-footer.h-card li, .site-footer.h-card a, .site-footer.h-card h2 { color: white; }
+.site-footer.h-card { background-color:$backgroundcolor-header-footer; }
+.site-header a { color: white !important; }
+.site-nav input:checked ~ .trigger { display: flex; flex-direction: column; height: 100vh; position:fixed; top:0px; left:0px!important; bottom:0px; background-color:$backgroundcolor-header-footer; transition: .9s all; padding-bottom:5px; width: 100%; }
+.page-content { min-height: 500px; }
+.path-breadcrumbs { max-width: 1200px; margin: 20px auto; text-align: right; }
+@media (min-width: 768px) { .post-ayuda { width: 66%; -ms-flex-preferred-size:66%; -webkit-flex-basis: 66%; flex-basis: 66%; float:left } }
+@media (min-width: 768px) { #sidebar { display: block; min-height: 1px; } }
+@media (min-width: 768px) and (max-width: 1500px) { .sidebar {-webkit-box-flex: 0 0 24%; -webkit-flex: 0 0 24%; -ms-flex: 0 0 24%; flex: 0 0 24%; width: 24%; float:left; margin-right: 10%} }
+@media (min-width: 768px) { #sidebarContent { position: fixed; width: 100%; max-width: inherit; display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; padding-top: 24px; z-index: 1; } }
+.toc { margin-top: 24px; overflow-y: auto; -webkit-box-flex: 1; -webkit-flex-grow: 1; -ms-flex-positive: 1; flex-grow: 1; }
+.toc > ul a { color: #000; display: block; font-size: .875rem; line-height: 1.3; margin-left: 1.8rem; margin-right: 1rem; padding-bottom: 6px; padding-top: 4px; word-wrap: break-word; }
+
 
