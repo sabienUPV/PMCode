@@ -47,7 +47,7 @@ rss: RSS PMCode
 
 # Build settings
 markdown: kramdown
-theme: jekyll-theme-minimal
+theme: jekyll-theme-slate
 plugins:
   - jekyll-feed
 collections:
