@@ -13,7 +13,7 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Your awesome title
+title: PMCode
 email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
@@ -23,6 +23,27 @@ baseurl: "/PMCode" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
 github_username:  jekyll
+#dribbble_username:
+facebook_username: jekyll
+#flickr_username:
+#instagram_username:
+#linkedin_username:
+#pinterest_username:
+#youtube_username:
+#googleplus_username:
+rss: RSS PMCode
+#google_analytics: id
+
+#author: global author information
+#logo: /assets/image/your-company-logo.jpg
+#lang: es_ES (idioma del sitio)
+#social:
+#name: if the user or organization name differs from the site's name(espaciado con respecto a Social)
+#link:(espaciado con respecto a Social)
+#- https://twitter.com/PMCode (espaciado con respecto a Link)
+# ... (Mas redes sociales)
+#date_modified: prioridad para la salida date_modified en JSON-LD (espaciado con respecto a Social)
+#google_site_verification: (for verifying ownership via Google webmaster tools)
 
 # Build settings
 markdown: kramdown
