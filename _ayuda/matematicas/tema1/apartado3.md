@@ -1,8 +1,7 @@
 ---
-title: prueba3
-permalink: /ayuda/introduccion/prueba1/prueba5/prueba3/
-order: 5
-breadcrumb: Prueba3
+title: Apartado3
+order: 7
+breadcrumb: Apartado3
 #description: Prueba1 descripcion
 lang: es_ES
 #SEO especifico para una pagina opciones, si no pones nada coge los de por defecto o los que pongas en el _config.yml (para todos):
@@ -15,7 +14,7 @@ lang: es_ES
 #canonical_url: (si quieres especificar una url canonica especifica) 'https:/git..com/pmcode/'
 ---
 
-<p>Contenido de prueba3</p>
+<p>Contenido de apartado3</p>
 <figure>
 	<img src="{{ '/assets/images/casa.jpg' | absolute_url }}" alt="casa">
 </figure>

@@ -1,8 +1,8 @@
 ---
-title: Configuracion
-permalink: /ayuda/configuracion/
-order: 1
-breadcrumb: Configuracion
+title: Apartado1-1
+#permalink: /ayuda/introduccion/prueba1/prueba5/prueba2/
+order: 4
+breadcrumb: Apartado1-1
 #description: Prueba1 descripcion
 lang: es_ES
 #SEO especifico para una pagina opciones, si no pones nada coge los de por defecto o los que pongas en el _config.yml (para todos):
@@ -15,7 +15,7 @@ lang: es_ES
 #canonical_url: (si quieres especificar una url canonica especifica) 'https:/git..com/pmcode/'
 ---
 
-<p>Contenido de configuracion</p>
+<p>Contenido de apartado1-1</p>
 <figure>
 	<img src="{{ '/assets/images/casa.jpg' | absolute_url }}" alt="casa">
 </figure>

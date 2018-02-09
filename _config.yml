@@ -53,7 +53,7 @@ plugins:
 collections:
   ayuda:
     output: true
-    permalink: /:collection/:name/
+    permalink: /:collection/:path
 defaults:
  - scope:
      path: ""
