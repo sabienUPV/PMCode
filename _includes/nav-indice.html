@@ -1,0 +1,31 @@
+{% assign navurl = page.url | relative_url %}
+<ul>
+{% for item in include.nav %}
+{% assign itemurl = item.folder | append: item.archive %}
+    {% if item.title %}
+	<!--<li>
+	   <h2>{{ item.title }}</h2>
+	</li>-->
+    {% endif %}
+	<li>
+		
+		{% if item.subitems %} <a href="{{itemurl}}"> {% else %} <a href="{{itemurl}}" class="nav-sin-items"> {% endif %}
+			{% if item.subitems %}
+				{% if itemurl contains navurl %}
+					<i class="fas fa-caret-down"></i>
+				{% else %}
+					<i class="fas fa-caret-right"></i>
+				{% endif %}
+			{% endif %}	
+			{% if itemurl == navurl %}
+				<b>{{ item.text }}</b>
+			{% else %}
+				{{ item.text }}			
+			{% endif %}
+		</a>
+	</li>
+	{% if item.subitems and itemurl contains navurl %}
+		{% include navSubLevels-indice.html nav=item.subitems %}
+	{% endif %}
+{% endfor %}
+</ul>

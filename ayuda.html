@@ -4,9 +4,6 @@ title: Ayuda
 permalink: /ayuda/
 breadcrumb: Ayuda
 ---
-{% assign items = site.ayuda | sort: 'order' %}
-{% for help in items %}
-<div class="ayuda">
-	<h2><a href="{{ site.baseurl }}{{ help.url }}">{{ help.title }}</a></h2>
+<div class="indice-ayuda">
+{% include nav-indice.html nav=site.data.navigation.ayuda %}
 </div>
-{% endfor %}

@@ -10,10 +10,11 @@
 {% for i in (1..forLoopMaxInt) %}
     {% assign meta = i | plus: 1 %}
     {% capture current_breadcrumb_url %}{{next_prepender}}/{{ splitted_url_parts[i] }}/index.html{% endcapture %}
-    {% capture current_breadcrumb_md_url %}{{next_prepender}}/{{ splitted_url_parts[i] }}/{% endcapture %}
+    {% capture current_breadcrumb_md_url1 %}{{next_prepender}}/{{ splitted_url_parts[i] }}/{% endcapture %}
+    {% capture current_breadcrumb_md_url2 %}{{next_prepender}}/{{ splitted_url_parts[i] }}{% endcapture %}
     {% capture next_prepender %}{{next_prepender}}/{{ splitted_url_parts[i] }}{% endcapture %}
     {% for breadcrumb_page in site.pages %}
-        {% if current_breadcrumb_url == breadcrumb_page.url or current_breadcrumb_md_url == breadcrumb_page.url  %}
+        {% if current_breadcrumb_url == breadcrumb_page.url or current_breadcrumb_md_url1 == breadcrumb_page.url or current_breadcrumb_md_url2 == breadcrumb_page.url  %}
         {% assign j = forLoopMaxInt | plus: 0 %}
             <li {% if i == j %}class="active"{% endif %} itemprop="itemListElement" itemscope
       itemtype="http://schema.org/ListItem">
@@ -24,7 +25,7 @@
         {% endif %}
     {% endfor %}
     {% for breadcrumb_page in site.documents %}
-        {% if current_breadcrumb_url == breadcrumb_page.url or current_breadcrumb_md_url == breadcrumb_page.url  %}
+        {% if current_breadcrumb_url == breadcrumb_page.url or current_breadcrumb_md_url1 == breadcrumb_page.url or current_breadcrumb_md_url2 == breadcrumb_page.url  %}
         {% assign j = forLoopMaxInt | plus: 0 %}
             <li {% if i == j %}class="active"{% endif %} itemprop="itemListElement" itemscope
       itemtype="http://schema.org/ListItem">
