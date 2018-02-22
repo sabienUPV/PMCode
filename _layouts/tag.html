@@ -1,0 +1,21 @@
+---
+layout: page
+---
+
+{% for post in site.tags[page.tags] %}
+<article>
+  <header>
+  <h1><a href="{{ post.url | absolute_url }}">{{ post.title }}</a></h1>
+  <p class="header-post">
+    <span class="author">{{ post.author }}</span>
+    <span class="date">{{ post.date }}</span>
+  </p>
+  </header>
+  <div class="content-post">
+    {{ post.excerpt }}
+  </div>
+  <footer>
+  <a href="{{ post.url | absolute_url }}">Leer Más</a>
+  </footer>
+</article>
+{% endfor %}

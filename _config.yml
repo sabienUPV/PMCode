@@ -50,6 +50,12 @@ markdown: kramdown
 # theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-paginate
+paginate: 3
+paginate_path: "/blog/page/:num"
+permalink: /:title:output_ext
+cat: /category/ 
+tag: /tag/
 collections:
   ayuda:
     output: true

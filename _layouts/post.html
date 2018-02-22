@@ -18,7 +18,23 @@ layout: default
   <div class="post-content e-content" itemprop="articleBody">
     {{ content }}
   </div>
+  <div class="categories">
+	<p><span>Categorias: </span>
+	{% for cat in page.categories %}
+	<span class="cat">
+	<a href="{{site.baseurl}}{{site.cat}}{{cat}}/">{{cat}}</a></span>
+	{% endfor %}
+	</p>
+  </div>
 
+  <div class="tags">
+	<p><span>Etiquetas: </span>
+	{% for tag in page.tags %}
+	<span class="tag">
+	<a href="{{site.baseurl}}{{site.tag}}{{tag}}/">{{tag}}</a></span>
+	{% endfor %}
+	</p>
+  </div>
   {% if site.disqus.shortname %}
     {% include disqus_comments.html %}
   {% endif %}

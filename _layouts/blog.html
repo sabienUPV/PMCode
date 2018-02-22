@@ -1,0 +1,65 @@
+---
+layout: default
+title: Blog
+---
+<!-- This loops through the paginated posts -->
+<div class="blog">
+{% for post in paginator.posts %}
+<article class="blogarticle">
+  <header>
+  <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+  <p class="header-post">
+  {% if post.author %}	
+    <span class="author">{{ post.author }}</span>
+  {% endif %}
+  {% if post.date %}
+    <span class="date">{{ post.date | date: "%b %-d, %Y" }}</span>
+  {% endif %}
+  </p>
+  </header>
+  <div class="content-post">
+    {{ post.excerpt }}
+  </div>
+  <footer>
+  <a href="{{ site.baseurl }}{{ post.url }}">Leer Más</a>
+  </footer>
+</article>
+{% endfor %}
+</div>
+<aside class="asideblog">
+<h3>Categories</h3>
+{% for category in site.categories %}
+<p><a href="{{site.baseurl}}{{site.cat}}{{ category | first }}/">{{ category | first }}</a></p>
+{% endfor %}
+<h3>Etiquetas</h3>
+{% for tags in site.tags %}
+<span><a href="{{site.baseurl}}{{site.tag}}{{ tags | first }}/">{{ tags | first }}</a></span>
+{% endfor %}
+</aside>
+
+<!-- Pagination links -->
+{% if paginator.total_pages > 1 %}
+<div class="pagination">
+  {% if paginator.previous_page %}
+    <a class="prev" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a>
+  {% else %}
+    <span class="prev">&laquo; Prev</span>
+  {% endif %}
+
+  {% for page in (1..paginator.total_pages) %}
+    {% if page == paginator.page %}
+      <em class="pages">{{ page }}</em>
+    {% elsif page == 1 %}
+      <a class="pages" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
+    {% else %}
+      <a class="pages" href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
+    {% endif %}
+  {% endfor %}
+
+  {% if paginator.next_page %}
+    <a class="next" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a>
+  {% else %}
+    <span class="next" >Next &raquo;</span>
+  {% endif %}
+</div>
+{% endif %}
