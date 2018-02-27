@@ -1,12 +1,14 @@
+{% capture page_url_without_index_html %}{{ page.url | remove: "/index.html" }}{% endcapture %}
+{% assign splitted_url_parts = page_url_without_index_html | split: '/' %}
+{% capture forLoopMaxInt %}{{ splitted_url_parts.size | minus:1 }}{% endcapture %}
+{% if page_url_without_index_html != "/" %}
 <div class="path-breadcrumbs">
+{% capture page_url_without_index_html_test %}{{ page.url | remove: "/index.html" }}{% endcapture %}
 <div class="wrapper">
 <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
 <li itemprop="itemListElement" itemscope
       itemtype="http://schema.org/ListItem"><a itemscope itemtype="http://schema.org/Thing"
        itemprop="item" href="{{ site.baseurl }}/"><span itemprop="name">Inicio</span></a><meta itemprop="position" content="1" /></li><span class="separator-breadcrumb">></span>
-{% capture page_url_without_index_html %}{{ page.url | remove: "/index.html" }}{% endcapture %}
-{% assign splitted_url_parts = page_url_without_index_html | split: '/' %}
-{% capture forLoopMaxInt %}{{ splitted_url_parts.size | minus:1 }}{% endcapture %}
 {% for i in (1..forLoopMaxInt) %}
     {% assign meta = i | plus: 1 %}
     {% capture current_breadcrumb_url %}{{next_prepender}}/{{ splitted_url_parts[i] }}/index.html{% endcapture %}
@@ -14,7 +16,7 @@
     {% capture current_breadcrumb_md_url2 %}{{next_prepender}}/{{ splitted_url_parts[i] }}{% endcapture %}
     {% capture next_prepender %}{{next_prepender}}/{{ splitted_url_parts[i] }}{% endcapture %}
     {% for breadcrumb_page in site.pages %}
-        {% if current_breadcrumb_url == breadcrumb_page.url or current_breadcrumb_md_url1 == breadcrumb_page.url or current_breadcrumb_md_url2 == breadcrumb_page.url  %}
+        {% if current_breadcrumb_url == breadcrumb_page.url or current_breadcrumb_md_url1 == breadcrumb_page.url or current_breadcrumb_md_url2 == breadcrumb_page.url %}
         {% assign j = forLoopMaxInt | plus: 0 %}
 	{% unless current_breadcrumb_url contains "/page/" or current_breadcrumb_md_url1 contains "/page/" or current_breadcrumb_md_url2 contains "/page/" %}
             <li {% if i == j %}class="active"{% endif %} itemprop="itemListElement" itemscope
@@ -24,7 +26,7 @@
        itemprop="item" href="{{ site.baseurl }}{{breadcrumb_page_page_url_without_index_html}}"><span itemprop="name">{{breadcrumb_page.breadcrumb}}</span></a><meta itemprop="position" content="{{meta}}" />
             </li>{% if i != j %}{% unless current_breadcrumb_url contains "/blog/" or current_breadcrumb_md_url1 contains "/blog/" or current_breadcrumb_md_url2 contains "/blog" %}<span class="separator-breadcrumb">></span>{% endunless %}{% endif %}
 	{% endunless %}
-		{% endif %}
+        {% endif %}
     {% endfor %}
     {% for breadcrumb_page in site.documents %}
         {% if current_breadcrumb_url == breadcrumb_page.url or current_breadcrumb_md_url1 == breadcrumb_page.url or current_breadcrumb_md_url2 == breadcrumb_page.url  %}
@@ -41,3 +43,4 @@
 </ol>
 </div>
 </div>
+{% endif %}

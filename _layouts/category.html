@@ -7,8 +7,12 @@ layout: page
   <header>
   <h1><a href="{{ post.url | absolute_url }}">{{ post.title }}</a></h1>
   <p class="header-post">
+    {% if post.author %}
     <span class="author">{{ post.author }}</span>
-    <span class="date">{{ post.date }}</span>
+    {% endif %}
+    {% if post.date %}
+    <span class="date">{{ post.date | date: site.date}}</span>
+    {% endif %}
   </p>
   </header>
   <div class="content-post">

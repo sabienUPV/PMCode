@@ -48,14 +48,23 @@ rss: RSS PMCode
 # Build settings
 markdown: kramdown
 # theme: minima
+# Plugins usados para la pagina. El que crea el rss o feed y el de paginación
 plugins:
   - jekyll-feed
   - jekyll-paginate
+# Numero de post que queremos que salgan en el blog por pagina
 paginate: 3
+# Ruta al paginar /page/2 ...
 paginate_path: "/blog/page/:num"
+# Permalink por defecto usado para los articulos del blog en este caso saldra /PMCode/titulo del articulo.
 permalink: /:title:output_ext
-cat: /category/ 
+# Fecha de publicacion de las entradas en blog, post, category y tags (modificandolo ahi se modifican en todos los sitios que tengan {{site.date}})
+date: "%b %-d, %Y"
+# Url de categorias modificandola ahi se modifican en todos los sitios que tengan {{site.cat}}
+cat: /category/
+# Url de categorias modificandola ahi se modifican en todos los sitios que tengan {{site.tag}}
 tag: /tag/
+# Colección creada para ayuda, si se quiere modificar ayuda por otro nombre cambiar todos los campos que ponga ayuda por lo que se necesite
 collections:
   ayuda:
     output: true
